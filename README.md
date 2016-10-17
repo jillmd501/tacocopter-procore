@@ -1,24 +1,7 @@
-# README
+# Tacocopter Procore Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Here in Santa Barbara, we're passionate about our tacos. In fact, we get tacos catered for lunch every Wednesday. When we go out for lunch, though, we want to make sure the shop we go to has the right fillings and sauces to satisfy everyone.
 
-Things you may want to cover:
+Your mission, should you choose to accept it, is to help us by writing a Rails app that solves this conundrum.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![taco image](https://s-media-cache-ak0.pinimg.com/originals/99/5b/e0/995be049ba2873da650c5242aca532db.jpg)
