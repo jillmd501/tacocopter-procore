@@ -1,19 +1,24 @@
-# tacocopter-sql-workshop
+# README
 
-## Setup
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-First create a `config/database.yml` file that's compatible with your local environment. If you're using the Procore UDE, just copy the file from your Procore repo. Then run
+Things you may want to cover:
 
-```sh
-rake db:setup
-```
+* Ruby version
 
-and you're ready to go!
+* System dependencies
 
-The site is deployed at <a href='http://tacocopter.herokuapp.com'/>tacocopter.herokuapp.com</a>
+* Configuration
 
-Slides are <a href=https://docs.google.com/presentation/d/1Y3gWwABlmSjAeZrBflAhUv-6m2nDRY8FYxvswJal4D0/edit?usp=sharing">here</a>
+* Database creation
 
+* Database initialization
 
-Written in Ruby on Rails. If you'd like to contribute, just open an issue or open a pull request and notify Brad Urani.
+* How to run the test suite
 
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
