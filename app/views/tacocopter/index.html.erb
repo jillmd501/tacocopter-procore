@@ -1,10 +1,22 @@
 <h1 style="text-align:center">Tacocopter</h1>
 <p style="text-align:center">Select your specifications below:</p>
 
-<form action="/somepath" method="post">
+<h3>Choose your filling:</h3>
+<form action="/show" method="">
+  <%= @tacos.map do |taco| %>
   <input type="checkbox">
-
-  <!-- other inputs here -->
-
-  <input type="submit" value="Show me the tacos!">
+  	<%= taco.name %>
+  	<br>
+  <% end  %>
 </form>
+
+<h3>Choose your salsa:</h3>
+<form action="/show" method="">
+  <%= @salsas.map do |salsa| %>
+  <input type="checkbox">
+  	<%= salsa.name %>
+  	<br>
+  <% end  %>
+</form>
+ 
+ <input type="submit" value="Show me the tacos!">

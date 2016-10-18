@@ -5,7 +5,7 @@ class TacocopterController < ApplicationController
 	def index
 		@tacos = Taco.all
 		@salsas = Salsa.all
-		
+		#binding.pry
 	end
 
 	# List only restaurants with params selected by user
