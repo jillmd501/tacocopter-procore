@@ -13,7 +13,7 @@ class Store < ActiveRecord::Base
   	self.salsas
   end
 
-  #miiiight need this?
+  # miiiight need this?
   def final_tacos_and_salsas
 
   end

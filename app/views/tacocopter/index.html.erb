@@ -2,9 +2,7 @@
 <p style="text-align:center">Select your specifications below:</p>
 
 <h3>Choose your filling:</h3>
-
 <form action="/show" method="get" name="search">
-
   <%= @tacos.map do |taco|%>
   	<input type="checkbox" name="<%= taco.name %>" value="<%= taco.name %>">
   	<%= taco.name %>
@@ -12,12 +10,11 @@
   <% end  %>
 
 <h3>Choose your salsa:</h3>
-
   <%= @salsas.map do |salsa| %>
  	<input type="checkbox" name="<%= salsa.name %>" value="<%= salsa.name %>"> <%= salsa.name %>
   	<br>
-  <% end  %>
-
+  <% end %>
+  <br>
+  <input type="submit" value="Show me the tacos!">
 </form>
  
-<input type="submit" value="Show me the tacos!">

@@ -6,7 +6,15 @@
     <th>Location</th> 
   </tr>
   <tr>
-    <td><%= # iterate through array of qualifying restaurants%></td>
-    <td><%= # iterate through  array of corresponding cities%></td>
+    <td>
+    	<%= @stores.each do |store| %>
+          <%= store.name %>
+         <% end %>
+    </td>
+    <td>
+    	<%= @cities.each do |city| %>
+    	  <% city.name %>
+    	<% end %>
+    </td>
   </tr>
 </table>
