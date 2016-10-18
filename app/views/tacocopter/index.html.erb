@@ -2,19 +2,27 @@
 <p style="text-align:center">Select your specifications below:</p>
 
 <h3>Choose your filling:</h3>
-<form action="/show" method="get" name="search">
+
+<form action="/search" method="get" name="search">
   <%= @tacos.map do |taco|%>
-  	<input type="checkbox" name="<%= taco.name %>" value="<%= taco.name %>">
+  	<input type="checkbox" name="tacos[]" value="<%= taco.id %>">
   	<%= taco.name %>
   	<br>
-  <% end  %>
+  	<% end %>
+  <br>
+  <input type="checkbox" name="all" value="all-tacos"> One for each taco in the seed file
 
 <h3>Choose your salsa:</h3>
+
   <%= @salsas.map do |salsa| %>
- 	<input type="checkbox" name="<%= salsa.name %>" value="<%= salsa.name %>"> <%= salsa.name %>
+ 	<input type="checkbox" name="salsas[]" value="<%= salsa.id %>">
+ 	 <%= salsa.name %>
   	<br>
-  <% end %>
+  	<% end %>
   <br>
-  <input type="submit" value="Show me the tacos!">
+  <input type="checkbox" name="all" value="all-tacos"> One for each salsa in the seed file
+  <br>
+  <input type="submit" value="Search">
+
 </form>
  
