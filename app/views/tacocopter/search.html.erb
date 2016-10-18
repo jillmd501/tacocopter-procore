@@ -1,24 +1,23 @@
 <h1 style="text-align:center">Eat up!</h1>
 
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% else %>
-  <table style="width:100%">
+
+  <table>
     <tr>
       <th>Store Name</th>
       <th>Location</th> 
     </tr>
     <tr>
       <td>
-        <%= @stores.each do |store| %>
-            <%= store.name %>
-           <% end %>
+        <% @final_stores.each do |store| %>
+          <%= store.name %>
+          <br>
+        <% end %>
       </td>
       <td>
-        <%= @cities.each do |city| %>
-          <% city.name %>
+        <% @final_stores.each do |store| %>
+          <%= store.city_id %>
+          <br>
         <% end %>
       </td>
     </tr>
   </table>  
-<% end %>

@@ -10,12 +10,14 @@ class Store < ActiveRecord::Base
   # Active Record queries for tacos that follow specific params
 
   def self.find_stores_with_selected_tacos(ids)
-  	binding.pry
-  	joins(:tacos).where(ids[:id])
+  	count = ids.count
+  	joins(:tacos).where(tacos: {id: ids}).group('id').having('COUNT(*) >= ?', count)
   end
-
-  def list_all_relative_salsas(ids)
-  	joins(:salsas).where(ids[:id])
-  end
+  
+  # def self.find_stores_with_selected_salsas(ids)
+  # 	binding.pry
+  # 	count = ids.count
+  # 	joins(:salsas).where(salsas: {id: ids}).group('id').having('COUNT(*) >= ?', count)
+  # end
 
 end
