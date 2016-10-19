@@ -4,7 +4,7 @@
 <h3>Choose your filling:</h3>
 
 <form action="/search" method="get" name="search">
-  <%= @tacos.map do |taco| %>
+  <% @tacos.map do |taco| %>
   	<input type="checkbox" name="tacos[]" value="<%= taco.id %>">
   	<%= taco.name %>
   	<br>
@@ -14,7 +14,7 @@
 
 <h3>Choose your salsa:</h3>
 
-  <%= @salsas.map do |salsa| %>
+  <% @salsas.map do |salsa| %>
  	<input type="checkbox" name="salsas[]" value="<%= salsa.id %>">
  	 <%= salsa.name %>
   	 <br>
