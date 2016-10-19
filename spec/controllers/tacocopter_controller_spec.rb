@@ -1,14 +1,28 @@
-require 'test_helper'
+require 'rails_helper'
 
-class TacocopterControllerTest < ActionController::TestCase
-	describe "#tacos" 
-	    it "returns all tacos" do
-	        expect(@tacos.cont).should eql(18)
-	    end
+RSpec.describe TacocopterController, type: :controller do
 
-	describe "#salsas" do
-	    it "returns all salsas" do
-	        expect(@tacos.count).should eql(9)
-	    end
-	end
+  describe '#index' do
+    it 'renders the :index template' do
+      get :index
+      expect(response).to render_template(:index)
+    end
+    it 'retrieves all tacos from index' do
+      tacos = Taco.all
+      get :index
+      expect(assigns(:tacos)).to eq(tacos)
+    end
+    it 'retrieves all salsas from index' do
+      salsas = Salsa.all
+      get :index
+      expect(assigns(:salsas)).to eq(salsas)
+    end
+  end
+
+  describe 'GET #search' do
+    it 'renders the :search template' do
+      get :search
+      expect(response).to render_template(:search)
+    end
+  end
 end
