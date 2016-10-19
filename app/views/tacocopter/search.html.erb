@@ -1,22 +1,23 @@
 <h1 style="text-align:center">Eat up!</h1>
+<%= flash[:notice].html_safe %>
 
-  <table border="1" align="center">
-    <tr>
-      <th>Store Name</th>
-      <th>Location</th> 
-    </tr>
-    <tr>
-      <td>
-        <% @final_stores.each do |store| %>
-          <%= store.name %>
-          <br>
-        <% end %>
-      </td>
-      <td>
-        <% @final_stores.each do |store| %>
-          <%= store.city_id %>
-          <br>
-        <% end %>
-      </td>
-    </tr>
-  </table>  
+<table border="1" align="center">
+  <tr>
+    <th>Store Name</th>
+    <th>Location</th> 
+  </tr>
+  <tr>
+    <td>
+      <% @final_stores.each do |store| %>
+        <%= store.name %>
+        <br>
+      <% end %>
+    </td>
+    <td>
+      <% @final_stores.each do |store| %>
+        <%= store.city_id %>
+        <br>
+      <% end %>
+    </td>
+  </tr>
+</table>  
