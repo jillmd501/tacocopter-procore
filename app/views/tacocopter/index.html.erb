@@ -3,6 +3,7 @@
 
 <h3>Choose your filling:</h3>
 
+
 <form action="/search" method="get" name="search">
   <% @tacos.map do |taco| %>
   	<input type="checkbox" name="tacos[]" value="<%= taco.id %>">

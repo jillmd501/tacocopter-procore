@@ -17,3 +17,9 @@
 li {
   font-size: 18px;
 }
+
+h1 {
+  font-family: 'Monoton', cursive;
+  font-size:  3.5em;
+  color: gray;
+}

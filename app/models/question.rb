@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
   has_many :answers
 
+  validates :question, presence: true
+
   def output
     conn = ActiveRecord::Base.connection.raw_connection
     table = ::Text::Table.new

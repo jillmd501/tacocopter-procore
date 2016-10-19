@@ -5,9 +5,8 @@ class Store < ActiveRecord::Base
   has_and_belongs_to_many :salsas
   belongs_to :city
 
-# validations go here
-
-  # Active Record queries for tacos that follow specific params
+  validates :name, presence: true
+  validates :zagat_rating, presence: true
 
   def self.find_stores_with_selected_tacos(ids)
   	count = ids.count
@@ -15,7 +14,7 @@ class Store < ActiveRecord::Base
   end
   
   # def self.find_stores_with_selected_salsas(ids)
-  # 	binding.pry
+  # 	# binding.pry
   # 	count = ids.count
   # 	joins(:salsas).where(salsas: {id: ids}).group('id').having('COUNT(*) >= ?', count)
   # end
