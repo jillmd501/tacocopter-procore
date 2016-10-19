@@ -3,7 +3,6 @@
 
 <h3>Choose your filling:</h3>
 
-
 <form action="/search" method="get" name="search">
   <% @tacos.map do |taco| %>
   	<input type="checkbox" name="tacos[]" value="<%= taco.id %>">
@@ -24,6 +23,5 @@
   <input type="checkbox" name="salsas" value="all-tacos"> One for each salsa in the seed file
   <br>
   <input type="submit" value="Search">
-
 </form>
  
