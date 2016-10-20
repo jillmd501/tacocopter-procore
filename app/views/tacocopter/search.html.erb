@@ -1,3 +1,4 @@
+
 <h1 style="text-align:center">Eat up!</h1>
 
 <table border="1" align="center">
@@ -14,7 +15,7 @@
     </td>
     <td>
       <% @final_stores.each do |store| %>
-        <%= store.city_id %>
+        <%= store.city.name %>
         <br>
       <% end %>
     </td>
