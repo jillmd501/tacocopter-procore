@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017190213) do
+ActiveRecord::Schema.define(version: 20150831035337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,6 @@ ActiveRecord::Schema.define(version: 20161017190213) do
     t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "car_washes", force: :cascade do |t|
@@ -50,12 +44,6 @@ ActiveRecord::Schema.define(version: 20161017190213) do
 
   create_table "salsas", force: :cascade do |t|
     t.string "name", limit: 255
-  end
-
-  create_table "salsas_stores", id: false, force: :cascade do |t|
-    t.integer "salsa_id"
-    t.integer "store_id"
-    t.integer "spiciness"
   end
 
   create_table "stores", force: :cascade do |t|

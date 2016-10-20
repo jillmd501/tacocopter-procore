@@ -11,7 +11,7 @@ class TacocopterController < ApplicationController
 # List only restaurants with params selected by user	
   def search
 	if params[:salsas].nil? && params[:tacos].nil?
-	  flash[:notice] = "Please select tacos or salsas!"
+	  redirect_to index_path
 	end
 	  @stores_with_tacos = Store.find_stores_with_selected_tacos(params[:tacos])
 	  # @stores_with_salsas= Store.find_stores_with_selected_salsas(params[:salsas])
