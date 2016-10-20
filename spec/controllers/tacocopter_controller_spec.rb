@@ -20,9 +20,6 @@ RSpec.describe TacocopterController, type: :controller do
   end
 
   describe 'GET #search' do
-    it 'renders the :search template' do
-      get :search
-      expect(response).to render_template(:search)
-    end
+    it ''
   end
 end
