@@ -6,8 +6,9 @@ class Store < ActiveRecord::Base
   has_many :stores_salsas
   has_many :salsas, through: :stores_salsas
 
-  has_and_belongs_to_many :tacos
-  
+  has_many :stores_tacos 
+  has_many :tacos, through: :stores_tacos
+
   validates :name, presence: true
   validates :zagat_rating, presence: true
 
@@ -17,7 +18,6 @@ class Store < ActiveRecord::Base
   end
   
   def self.find_stores_with_selected_salsas(ids)
-    # binding.pry
     count = ids.count
     joins(:salsas).where(salsas: {id: ids}).group('id').having('COUNT(*) >= ?', count)
   end

@@ -1,3 +1,5 @@
+before_action :attributes_selected
+
 class TacocopterController < ApplicationController
   def index
     @tacos = Taco.all
