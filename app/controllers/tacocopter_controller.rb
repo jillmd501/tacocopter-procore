@@ -1,6 +1,6 @@
-before_action :attributes_selected
-
 class TacocopterController < ApplicationController
+before_action :attributes_selected
+  
   def index
     @tacos = Taco.all
     @salsas = Salsa.all
