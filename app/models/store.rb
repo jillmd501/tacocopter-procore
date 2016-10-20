@@ -3,8 +3,8 @@ require 'pry'
 class Store < ActiveRecord::Base
   belongs_to :city
   has_and_belongs_to_many :tacos
-  has_many :salsas, through: salsas_stores
-  has_many :salsas_stores
+  has_many :salsas, through: :stores_salsas
+  has_many :stores_salsas
 
   validates :name, presence: true
   validates :zagat_rating, presence: true
@@ -16,7 +16,7 @@ class Store < ActiveRecord::Base
   
   def self.find_stores_with_selected_salsas(ids)
     count = ids.count
-    joins(:salsas_stores).where(salsas: {id: ids}).group('id').having('COUNT(*) >= ?', count)
+    joins(:stores_salsas).where(salsas: {id: ids}).group('id').having('COUNT(*) >= ?', count)
     binding.pry
   end
 
