@@ -1,5 +1,3 @@
-require 'pry'
-
 class TacocopterController < ApplicationController
   def index
     @tacos = Taco.all
@@ -10,13 +8,17 @@ class TacocopterController < ApplicationController
 	@stores_with_tacos = Store.find_stores_with_selected_tacos(params[:tacos])
 	@stores_with_salsas= Store.find_stores_with_selected_salsas(params[:salsas])
 	
-	if params[:salsas].nil? && params[:tacos].nil?
-		binding.pry
-	  flash[:notice]= "Pick tacos or salsas!"
-	elsif @stores_with_salsas.empty? || @stores_with_tacos.empty?
-      @final_stores = (@stores_with_salsas + @stores_with_tacos)
-    else
+	if @stores_with_salsas && @stores_with_tacos 
 	  @final_stores = @stores_with_tacos & @stores_with_salsas
+	elsif @stores_with_salsas.empty? 
+      @final_stores = @stores_with_tacos
+    else
+    	@final_stores = @stores_with_salsas
 	end
+  end
+
+  def attributes_selected
+  	params[:salsas].nil? && params[:tacos].nil?
+	flash[:notice]= "Pick tacos or salsas!"
   end
 end
