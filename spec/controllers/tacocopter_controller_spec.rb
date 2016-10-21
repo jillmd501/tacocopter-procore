@@ -18,8 +18,4 @@ RSpec.describe TacocopterController, type: :controller do
       expect(assigns(:salsas)).to eq(salsas)
     end
   end
-
-  describe 'GET #search' do
-    it ''
-  end
 end

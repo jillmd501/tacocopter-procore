@@ -1,5 +1,3 @@
-require 'pry'
-
 class Store < ActiveRecord::Base
   belongs_to :city
   
